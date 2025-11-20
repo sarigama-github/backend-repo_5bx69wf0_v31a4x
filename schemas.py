@@ -38,6 +38,19 @@ class Product(BaseModel):
     category: str = Field(..., description="Product category")
     in_stock: bool = Field(True, description="Whether product is in stock")
 
+# Customer schema for the search feature
+class Customer(BaseModel):
+    """
+    Customers collection schema
+    Collection name: "customer"
+    """
+    first_name: str = Field(..., description="Customer first name")
+    last_name: str = Field(..., description="Customer last name")
+    phone: Optional[str] = Field(None, description="Phone number")
+    address: Optional[str] = Field(None, description="Street address")
+    postcode: Optional[str] = Field(None, description="Postal code")
+    email: Optional[str] = Field(None, description="Email address")
+
 # Add your own schemas here:
 # --------------------------------------------------
 
